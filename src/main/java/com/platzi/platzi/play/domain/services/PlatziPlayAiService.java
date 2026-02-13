@@ -1,4 +1,4 @@
-package com.platzi.platzi.play;
+package com.platzi.platzi.play.domain.services;
 
 import dev.langchain4j.service.UserMessage;
 import dev.langchain4j.service.V;
