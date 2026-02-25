@@ -1,0 +1,83 @@
+package com.platzi.platzi.play.persistence.entity;
+
+import jakarta.persistence.*;
+
+import java.time.LocalDate;
+import java.math.BigDecimal;
+
+@Entity
+@Table(name = "platzi_play_peliculas")
+public class MovieEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, length = 150 , unique = true)
+    private String titulo;
+    @Column(nullable = false, precision = 3)
+    private Integer duracion;
+    @Column(nullable = false, length = 40)
+    private String genero;
+    @Column(name="fecha_estreno")
+    private LocalDate fechaEstreno;
+    @Column(precision = 3, scale = 2)
+    private BigDecimal clasificacion;
+    @Column(nullable = false, length = 1)
+    private String estado;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public BigDecimal getClasificacion() {
+        return clasificacion;
+    }
+
+    public void setClasificacion(BigDecimal clasificacion) {
+        this.clasificacion = clasificacion;
+    }
+
+    public LocalDate getFechaEstreno() {
+        return fechaEstreno;
+    }
+
+    public void setFechaEstreno(LocalDate fechaEstreno) {
+        this.fechaEstreno = fechaEstreno;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public Integer getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(Integer duracion) {
+        this.duracion = duracion;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+}
