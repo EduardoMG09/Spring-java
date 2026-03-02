@@ -3,12 +3,10 @@ package com.platzi.platzi.play.persistence.mapper;
 import com.platzi.platzi.play.domain.Estado;
 import org.mapstruct.Named;
 
-import java.util.Locale;
-
 public class EstadoMapper {
 
-    @Named("estadoToString")
-    public static Estado estadoToString (String estado){
+    @Named("stringToEstado")
+    public static Estado stringToEstado (String estado){
         if (estado == null) return null;
 
         return switch (estado.toUpperCase()){
@@ -18,8 +16,8 @@ public class EstadoMapper {
         };
     }
 
-    @Named("stringToEstado")
-    public static String stringToEstado(Estado estado){
+    @Named("estadoToString")
+    public static String estadoToString(Estado estado){
         if (estado == null) return null;
 
         return switch (estado){
